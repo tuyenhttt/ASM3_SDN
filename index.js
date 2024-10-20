@@ -1,10 +1,12 @@
 const express = require("express");
+const cors = require("cors");
 const dotenv = require("dotenv").config();
 const mongoose = require("mongoose");
 const connectDB = require("./src/configs/database.config");
 const StudentRoute = require("./src/routes/student.route");
 const app = express();
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
